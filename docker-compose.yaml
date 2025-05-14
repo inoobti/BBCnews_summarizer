@@ -1,0 +1,22 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend-container
+    ports:
+      - "8501:8501"  # Прокидываем порт для Streamlit
+    environment:
+      - API_BASE_URL=http://backend:8000 # Указываем URL для общения с backend
+    depends_on:
+      - backend  # Ждем, пока backend не запустится
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend-container
+    ports:
+      - "8000:8000"  # Прокидываем порт для FastAPI
+    volumes:
+      - ./backend/src:/app/src  # Монтируем локальный код в контейнер

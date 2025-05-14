@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "Серверная часть суммаризатора новостей"
+authors = ["timmy <timtskm@gmail.com>"]
+packages = [{include = "summarizer", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.12"
+transformers = "^4.51.3"
+torch = "^2.7.0"
+uvicorn = "^0.34.2"
+tqdm = "^4.67.1"
+bs4 = "^0.0.2"
+pandas = "^2.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

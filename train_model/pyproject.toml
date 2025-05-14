@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "train-model"
+version = "0.1.0"
+description = "Тренировка модели"
+authors = ["timmy <timtskm@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+transformers = "^4.51.3"
+evaluate = "^0.4.3"
+torch = "^2.7.0"
+huggingface-hub = "^0.31.1"
+datasets = "^3.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
